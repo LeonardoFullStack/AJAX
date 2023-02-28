@@ -4,6 +4,7 @@
 const form = document.querySelector('form')
 const submit = document.querySelector('#submit')
 const grid = document.querySelector('.gridcontainer')
+let contador = 1;
 
 document.body.addEventListener('click' ,(ev)=> {
     const search = document.querySelector('#search').value;
@@ -13,10 +14,20 @@ document.body.addEventListener('click' ,(ev)=> {
         peticion(search, select);
     }
 
+    if(ev.target.matches('#avanzar')) {
+        contador++
+        peticion(search, select);
+    }
+
+    if (ev.target.matches('#atras')) {
+        contador--;
+        peticion(search, select)
+    }
+
 })
 
 const peticion = (search, select) => {
-    fetch(`https://api.pexels.com/v1/search?query=${search}&orientation=${select}`, {
+    fetch(`https://api.pexels.com/v1/search?query=${search}&orientation=${select}&page=${contador}`, {
         method: 'GET',
         headers: {
           'authorization': 'G5Ojje39ZfUduWTOm2FOUUg9JYl9C18ode6hU4hB5IBEQv4Z2YOWJr1v'
@@ -29,6 +40,7 @@ const peticion = (search, select) => {
 
 
 const validarPaginas = (resp) => {
+    console.log(resp)
     paginas =Math.ceil (resp.total_results / resp.per_page);
     pintar(resp, paginas);
 }
