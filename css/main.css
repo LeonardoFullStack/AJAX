@@ -1,0 +1,46 @@
+body {
+    background-color: #c5e7c6;
+    margin: 0;
+}
+
+.gridcontainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+    margin: 20px;
+}
+
+.imgcontainer {
+    text-align: center;
+    padding: auto auto;
+    border: 2px solid #4CAF50;
+    background-color: darkolivegreen;
+}
+
+header {
+    display: flex; /* convierte al contenedor en un contenedor flexible */
+    align-items: center; /* alinea los elementos verticalmente en el centro */
+    justify-content: center; /* alinea los elementos horizontalmente en el centro */
+    background-color: darkolivegreen;
+    height: 200px;
+}
+
+
+button, select, input {
+    background-color: #4CAF50; /* color de fondo del botón */
+    border: none; /* borde del botón */
+    color: white; /* color del texto del botón */
+    padding: 15px 32px; /* padding del botón */
+    text-align: center; /* alineación del texto del botón */
+    text-decoration: none; /* decoración del texto del botón */
+    display: inline-block; /* muestra el botón como un elemento en línea */
+    font-size: 16px; /* tamaño de fuente del botón */
+    margin: 4px 2px; /* margen del botón */ /* cursor que aparecerá al pasar el cursor sobre el botón */
+  
+}
+
+
+button:hover{
+    background-color: #3e8e41; /* color de fondo del botón al pasar el cursor sobre él */
+  }
