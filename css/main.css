@@ -12,31 +12,31 @@ body {
 }
 
 .imgcontainer {
-    text-align: center;
+    text-align: left;
     padding: auto auto;
     border: 2px solid #4CAF50;
     background-color: darkolivegreen;
 }
 
 header {
-    display: flex; /* convierte al contenedor en un contenedor flexible */
-    align-items: center; /* alinea los elementos verticalmente en el centro */
-    justify-content: center; /* alinea los elementos horizontalmente en el centro */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
     background-color: darkolivegreen;
     height: 200px;
 }
 
 
 button, select, input {
-    background-color: #4CAF50; /* color de fondo del botón */
-    border: none; /* borde del botón */
-    color: white; /* color del texto del botón */
-    padding: 15px 32px; /* padding del botón */
-    text-align: center; /* alineación del texto del botón */
-    text-decoration: none; /* decoración del texto del botón */
-    display: inline-block; /* muestra el botón como un elemento en línea */
-    font-size: 16px; /* tamaño de fuente del botón */
-    margin: 4px 2px; /* margen del botón */ /* cursor que aparecerá al pasar el cursor sobre el botón */
+    background-color: #4CAF50; 
+    border: none; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px;
   
 }
 

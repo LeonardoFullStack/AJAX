@@ -15,7 +15,7 @@ document.body.addEventListener('click' ,(ev)=> {
     }
 
     if(ev.target.matches('#avanzar')) {
-        contador++
+        contador++;
         peticion(search, select);
     }
 
@@ -28,25 +28,31 @@ document.body.addEventListener('click' ,(ev)=> {
 
 const peticion = (search, select) => {
     fetch(`https://api.pexels.com/v1/search?query=${search}&orientation=${select}&page=${contador}`, {
-        method: 'GET',
+        method: 'GET', // no hace falta
         headers: {
           'authorization': 'G5Ojje39ZfUduWTOm2FOUUg9JYl9C18ode6hU4hB5IBEQv4Z2YOWJr1v'
         },
       })
         .then((response) => response.json())
         .then((json) => validarPaginas(json));
-    }
+}
 
 
 
 const validarPaginas = (resp) => {
     console.log(resp)
-    paginas =Math.ceil (resp.total_results / resp.per_page);
+    let paginas =Math.ceil (resp.total_results / resp.per_page);
     pintar(resp, paginas);
 }
 
 const pintar = (resp, paginas)  => {
     grid.innerHTML= '';
+    const button = document.createElement('BUTTON')
+    const button2 = document.createElement('BUTTON')
+    button.setAttribute('id', 'avanzar')
+    button.textContent = 'Avanzar';
+    button2.setAttribute('id', 'atras')
+    button2.textContent = 'Retroceder';
     resp.photos.forEach((item, index)=>{
         const div = document.createElement('DIV')
         const img = document.createElement('IMG')
@@ -59,7 +65,9 @@ const pintar = (resp, paginas)  => {
         grid.append(div)
     })
 
-    
+    grid.append(button2);
+    grid.append(button);
+
 }
 
 
