@@ -16,31 +16,57 @@ body {
     padding: auto auto;
     border: 2px solid #4CAF50;
     background-color: darkolivegreen;
+    font-family: bold, fantasy;
+    color: white;
+}
+p {
+    text-align: center;
+    background-color: darkolivegreen;
+    font-family: bold, fantasy;
+    color: white;
+
 }
 
 header {
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: darkolivegreen;
     height: 200px;
 }
 
 
-button, select, input {
-    background-color: #4CAF50; 
-    border: none; 
-    color: white; 
-    padding: 15px 32px; 
-    text-align: center; 
-    text-decoration: none; 
-    display: inline-block; 
-    font-size: 16px; 
+button,
+select,
+input {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
     margin: 4px 2px;
-  
+
 }
 
 
-button:hover{
-    background-color: #3e8e41; /* color de fondo del botón al pasar el cursor sobre él */
-  }
+button:hover {
+    background-color: #3e8e41;
+    /* color de fondo del botón al pasar el cursor sobre él */
+}
+
+img {
+    float: left;
+}
+
+#botoncitos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#numpag {
+    text-align: center;
+}
