@@ -22,8 +22,7 @@ const arrayImgIndex = [
   { id: 'cat', url: 'https://images.pexels.com/photos/1715092/pexels-photo-1715092.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'cat' },
   { id: 'bird', url: 'https://images.pexels.com/photos/105808/pexels-photo-105808.jpeg?auto=compress&cs=tinysrgb&h=350', alt: 'bird' },
 ]
-//url de la API
-const url = 'https://api.pexels.com/v1/'
+
 //contador para el numero de pagina
 let contador = 1;
 
@@ -66,8 +65,7 @@ const consulta = async (search, select, id) => {
       url = `https://api.pexels.com/v1/search?query=${searchFuera}&orientation=${selectFuera}&page=${page}}`;
     }
 
-    let peticion = await fetch(url, {
-      method: "GET",
+    let peticion = await fetch(url, { //quitar el GET
       headers: {
         authorization:
           "NAr49TCDwcL0j9wbNjjVqWAep0GJTA54OuL3ntuHLl7M0fGuHlu7e4wv",
@@ -104,7 +102,7 @@ const pintarImg = async (search, select) => {
     const p = document.createElement('P')
     const url = peticion.photos[index].src.medium
     const alt = peticion.photos[index].alt
-    p.innerHTML = `<u>id:</u>     ${peticion.photos[index].id} <br><br><u>Autor:</u> ${peticion.photos[index].photographer}<br><br> <u>Descripción:</u> ${peticion.photos[index].alt}.`
+    p.innerHTML = `<b>id:</b>     ${peticion.photos[index].id} <br><br><u>Autor:</u> ${peticion.photos[index].photographer}<br><br> <u>Descripción:</u> ${peticion.photos[index].alt}.`
     div.classList.add('imgcontainer')
     img.setAttribute('id', peticion.photos[index].id)
     img.setAttribute('class', 'imagen')
@@ -179,16 +177,17 @@ const pintarBotones = async (peticion) => {
 //pintarImagenesIndex PRIMERA EN INICIALIZAR //funciona
 const pintarImgIndex = () => {
   arrayImgIndex.forEach(({ id, url, alt }) => {
+    const p = document.createElement('P')
     const contImgIndex = document.createElement('div');
     const ImgIndex = document.createElement('img')
+    p.textContent = alt
     ImgIndex.className = 'imgIndex';
     ImgIndex.id = id;
     ImgIndex.src = url;
-    ImgIndex.alt = alt
+    ImgIndex.alt = alt;
     contImgIndex.setAttribute('class', 'imgIndex')
-/*     ImgIndex.setAttribute('width', '200px')
-    ImgIndex.setAttribute('height', '200px') */
     contImgIndex.append(ImgIndex);
+    contImgIndex.append(p)
     containerIndex.append(contImgIndex);
   })
 }
@@ -213,14 +212,6 @@ const pintarUno = async (idNew) => {
 const init = () => {
   const urlParams = new URLSearchParams(window.location.search);
 
-  /* if (urlParams.has('query')) {
-    const query = urlParams.get('query')
-    const select = urlParams.get('orientation')
-    consulta(query, select);
-  } else {
-    console.log('La URL no tiene parámetros');
-  } */
-
   if (!window.location.search) {
     pintarImgIndex();
   } else if (urlParams.has('query')) {
@@ -230,7 +221,6 @@ const init = () => {
   } else  {
      const idString = window.location.search
      idNew = idString.substring(4)
-     console.log(idNew)
     pintarUno(idNew)
   }
 }
