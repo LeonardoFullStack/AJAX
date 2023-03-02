@@ -1,0 +1,94 @@
+body {
+    background-color: white;
+    margin: 0;
+}
+
+.gridcontainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+    margin: 20px;
+}
+
+
+
+.imgcontainer {
+    text-align: center;
+    padding: auto auto;
+    border: 2px solid #4CAF50;
+    background-color: rgb(241, 238, 238);
+    font-family: bold, fantasy;
+    color: white;
+}
+p {
+    text-align: center;
+    background-color: darkolivegreen;
+    font-family: bold, fantasy;
+    color: white;
+
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../fotos/background-photo.jpeg);
+    height: 200px;
+}
+
+
+button,
+select,
+input,
+img {
+    
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+
+}
+
+
+button:hover {
+    background-color: #3e8e41;
+    /* color de fondo del botón al pasar el cursor sobre él */
+
+}
+
+ 
+
+#botoncitos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#numpag {
+    text-align: center;
+}
+
+#containerImgIndex {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.imgIndex {
+align-items: center;
+text-align: center;
+margin-top:10px;
+ width: 92git add .%;
+}
+
+.imagenUno {
+    margin:0 auto;
+    align-items: center;
+    text-align: center;
+}
+
