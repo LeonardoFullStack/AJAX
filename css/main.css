@@ -57,9 +57,9 @@ button:hover {
     /* color de fondo del botón al pasar el cursor sobre él */
 }
 
-img {
+/* img {
     float: left;
-}
+} */
 
 #botoncitos {
     display: flex;
@@ -69,4 +69,14 @@ img {
 
 #numpag {
     text-align: center;
+}
+
+#containerImgIndex {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.imgIndex {
+align-items: center;
+text-align: center;
 }
