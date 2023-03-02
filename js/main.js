@@ -5,10 +5,11 @@
 const form = document.querySelector('form')
 const submit = document.querySelector('#submit')
 const grid = document.querySelector('.gridcontainer')
-const containerIndex = document.querySelector('#containerImgIndex');//ESTHER
-const fragment = document.createDocumentFragment();//ESTHER
+const containerIndex = document.querySelector('#containerImgIndex');
+const fragment = document.createDocumentFragment();
 const buttons = document.querySelector('#botoncitos')
 const divPag = document.querySelector('#numpag')
+const imagen1 = document.querySelector('.imagenUno')
 let page = 1;
 let searchFuera;
 let selectFuera;
@@ -17,9 +18,9 @@ let selectFuera;
 arrayImagenesIndex
 */
 const arrayImgIndex = [
-  { id: 'dog', url: 'https://t1.ea.ltmcdn.com/es/razas/6/5/8/podenco-andaluz-maneto_856_0_orig.jpg', alt: 'badger' },
-  { id: 'cat', url: 'https://images.pexels.com/photos/1715092/pexels-photo-1715092.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'badger' },
-  { id: 'badger', url: 'https://nationaltoday.com/wp-content/uploads/2022/06/National-Badger-Day.jpg', alt: 'badger' },
+  { id: 'dog', url: 'https://images.pexels.com/photos/13618083/pexels-photo-13618083.jpeg?auto=compress&cs=tinysrgb&h=350', alt: 'dog' },
+  { id: 'cat', url: 'https://images.pexels.com/photos/1715092/pexels-photo-1715092.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'cat' },
+  { id: 'bird', url: 'https://images.pexels.com/photos/105808/pexels-photo-105808.jpeg?auto=compress&cs=tinysrgb&h=350', alt: 'bird' },
 ]
 //url de la API
 const url = 'https://api.pexels.com/v1/'
@@ -31,20 +32,13 @@ document.body.addEventListener('click', (ev) => {
   search = document.querySelector('#search').value;
   select = document.querySelector('#select').value;
   ev.preventDefault();
-  //DATO ENVIADO POR EL SUBMIT
   if (ev.target.matches('#submit')) {
     location.href = `results.html?query=${search}&orientation=${select}`;
-    /*  consulta(search, select); */
-    //aqui deberia estar la funcion que pinte la primera pagina del submit
-  }
-  //BOTONES
+  }  
 
-  //pulsar en alguna de las imagenes    
   if (ev.target.matches('.imgIndex')) {
-
     const idImgIndex = ev.target.id;
     location.href = `results.html?query=${idImgIndex}&orientation=${select}`;
-    //location.href = `./results.html?${idImgIndex}`;//el parametro de results será dog, cat o badger
     console.log(idImgIndex);
   }
 
@@ -52,7 +46,6 @@ document.body.addEventListener('click', (ev) => {
     page = ev.target.textContent
     console.log(page)
     pintarImg(search, select, page)
-
   }
 
   if (ev.target.matches('.imagen')) {
@@ -193,8 +186,8 @@ const pintarImgIndex = () => {
     ImgIndex.src = url;
     ImgIndex.alt = alt
     contImgIndex.setAttribute('class', 'imgIndex')
-    ImgIndex.setAttribute('width', '200px')
-    ImgIndex.setAttribute('height', '200px')
+/*     ImgIndex.setAttribute('width', '200px')
+    ImgIndex.setAttribute('height', '200px') */
     contImgIndex.append(ImgIndex);
     containerIndex.append(contImgIndex);
   })
@@ -207,9 +200,11 @@ const pintarUno = async (idNew) => {
   console.log(urlFoto)
   const div = document.createElement('DIV')
   const img = document.createElement('IMG')
+  div.classList.add('.contimagen1')
+  img.classList.add('imagen1')
   img.setAttribute('src', urlFoto)
   div.append(img)
-  grid.append(div)
+  imagen1.append(div)
 
 }
 

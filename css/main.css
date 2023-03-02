@@ -11,7 +11,7 @@ body {
     margin: 20px;
 }
 
-img {box-shadow: 1px 1px 5px rgb(241, 238, 238)}
+
 
 .imgcontainer {
     text-align: center;
@@ -33,17 +33,18 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: darkolivegreen;
+    background-image: url(../fotos/background-photo.jpeg);
     height: 200px;
 }
 
 
 button,
 select,
-input {
-    background-color: #4CAF50;
+input,
+img {
+    
     border: none;
-    color: white;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -75,9 +76,19 @@ button:hover {
 #containerImgIndex {
     display:grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
 .imgIndex {
 align-items: center;
 text-align: center;
+margin-top:10px;
+ width: 100%;
 }
+
+.imagenUno {
+    margin:0 auto;
+    align-items: center;
+    text-align: center;
+}
+
